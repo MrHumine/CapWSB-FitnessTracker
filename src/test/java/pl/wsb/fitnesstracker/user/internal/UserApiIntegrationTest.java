@@ -6,9 +6,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 import pl.wsb.fitnesstracker.IntegrationTest;
 import pl.wsb.fitnesstracker.IntegrationTestBase;
 import pl.wsb.fitnesstracker.user.api.User;
+import pl.wsb.fitnesstracker.user.api.UserDto;
+import pl.wsb.fitnesstracker.user.api.UserService;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -29,6 +32,10 @@ class UserApiIntegrationTest extends IntegrationTestBase {
 
     @Autowired
     private MockMvc mockMvc;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private UserMapper userMapper;
 
     public static User generateUser() {
         return new User(randomUUID().toString(), randomUUID().toString(), LocalDate.now(), randomUUID().toString());
@@ -210,6 +217,5 @@ class UserApiIntegrationTest extends IntegrationTestBase {
         assertThat(user.getBirthdate()).isEqualTo(LocalDate.parse(USER_BIRTHDATE));
         assertThat(user.getEmail()).isEqualTo(USER_EMAIL);
     }
-
 
 }
