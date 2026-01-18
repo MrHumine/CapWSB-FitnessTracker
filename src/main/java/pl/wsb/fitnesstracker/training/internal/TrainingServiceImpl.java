@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-// TODO: Provide Implementation and correct the return type of the method getTraining
+
 public class TrainingServiceImpl implements TrainingProvider {
 
     private final TrainingRepository trainingRepository;

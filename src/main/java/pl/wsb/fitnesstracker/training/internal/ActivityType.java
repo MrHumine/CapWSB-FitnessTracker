@@ -1,8 +1,6 @@
 package pl.wsb.fitnesstracker.training.internal;
 
-/**
- * Enumeration representing different types of physical activities.
- */
+
 public enum ActivityType {
 
     RUNNING("Running"),

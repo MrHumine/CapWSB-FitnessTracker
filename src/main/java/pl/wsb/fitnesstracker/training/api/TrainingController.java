@@ -12,10 +12,7 @@ import pl.wsb.fitnesstracker.user.internal.UserMapper;
 
 import java.util.List;
 
-/**
- * UserController is responsible for handling HTTP requests related to user operations.
- * It provides endpoints for retrieving and creating users.
- */
+
 @RestController
 @RequestMapping("/v1/trainings")
 @RequiredArgsConstructor
