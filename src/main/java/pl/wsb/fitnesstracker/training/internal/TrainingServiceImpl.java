@@ -3,7 +3,6 @@ package pl.wsb.fitnesstracker.training.internal;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import pl.wsb.fitnesstracker.training.api.Training;
 import pl.wsb.fitnesstracker.training.api.TrainingProvider;
 import pl.wsb.fitnesstracker.training.api.TrainingRepository;
@@ -35,5 +34,4 @@ public class TrainingServiceImpl implements TrainingProvider {
                 .map(trainingMapper::toDto)
                 .toList();
     }
-
 }

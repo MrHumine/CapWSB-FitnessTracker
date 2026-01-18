@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.wsb.fitnesstracker.mail.api.EmailSender;
 import pl.wsb.fitnesstracker.training.api.Training;
 import pl.wsb.fitnesstracker.user.api.User;
 
@@ -15,11 +17,14 @@ import java.util.List;
 @AutoConfigureMockMvc
 public abstract class IntegrationTestBase {
 
+    @MockBean
+    protected EmailSender emailSender;
     @Autowired
     private JpaRepository<User, Long> userRepository;
 
     @Autowired
     private JpaRepository<Training, Long> trainingRepository;
+
 
     @AfterEach
     void cleanUp() {
